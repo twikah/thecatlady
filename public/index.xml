@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>the cat lady</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on the cat lady</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>Hello, fellow cat lovers! I&amp;rsquo;m Vanessa, a cat sitter (and web developer) based in Pontinha.&#xA;Ever since I can remember, my heart has been captivated by the grace and charm of our feline companions. I always wanted to become a cat mom and today I find myself fortunate enough to share my home with a spirited ball of orange fur named Poki. This mischievous five-year-old bundle of joy brings endless laughter to my life with his playful antics and insatiable curiosity.</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>We are here to help you Are you curious about something? Do you have some kind of problem with our products? As am hastily invited settled at limited civilly fortune me. Really spring in extent an by. Judge but built gay party world. Of so am he remember although required. Bachelor unpacked be advanced at. Confined in declared marianne is vicinity.&#xA;Please feel free to contact us, our customer service center is working for you 24/7.</description>
+    </item>
+    <item>
+      <title>FAQ</title>
+      <link>http://localhost:1313/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/faq/</guid>
+      <description>When do we meet? The first step is to schedule an introductory visit to your home - free of charge - to get to know your cat, the family, the living space and the routines.&#xA;There is no commitment associated with this visit and it can be scheduled via email (vanessathecatlady@gmail.com) or mobile (+351 911183985).&#xA;Are there rules around scheduling a visit? Appointments can be made at any time. It is possible to change scheduled dates, subject to availability.</description>
+    </item>
+    <item>
+      <title>Services</title>
+      <link>http://localhost:1313/services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/services/</guid>
+      <description>I&amp;rsquo;m here to help My services are designed to provide care, love and attention to your pet when you&amp;rsquo;re away for at least a day.&#xA;What I offer:&#xA;Home Visits: I drop by to check on your pets, give them some love, and make sure they&amp;rsquo;re doing well.&#xA;Location: Serving the Lisbon and Odivelas areas&#xA;Cost: €10 per visit&#xA;Duration: Each visit lasts about 90 minutes&#xA;During my visit, I will:</description>
+    </item>
+  </channel>
+</rss>

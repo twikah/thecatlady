@@ -1,0 +1,14 @@
+{
+  "name": "the-cat-lady",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "hugo",
+    "create": "hugo new",
+    "serve": "hugo server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
