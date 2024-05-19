@@ -10,5 +10,19 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "node": "^22.2.0"
+  },
+  "devDependencies": {
+    "hugo-bin": "^0.123.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twikah/thecatlady.git"
+  },
+  "bugs": {
+    "url": "https://github.com/twikah/thecatlady/issues"
+  },
+  "homepage": "https://github.com/twikah/thecatlady#readme",
   "description": ""
 }
