@@ -1,4 +1,4 @@
-baseURL = 'https://thecatlady.club/'
+baseURL = 'https://www.thecatlady.club/'
 languageCode = 'en-us'
 title = 'the cat lady'
 theme = 'hugo-universal-theme'
@@ -65,7 +65,7 @@ pluralizelisttitles = false
 [[menu.social]]
     weight = 3
     name = "Instagram"
-    url = "http://instagram.com"
+    url = "http://instagram.com/thecatlady.club"
     pre = "<i class='fab fa-2x fa-instagram'></i>"
 
 # Main params
