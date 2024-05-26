@@ -18,7 +18,7 @@ pluralizelisttitles = false
     weight     = 1
 
 [[menu.main]]
-    name       = "Our Services"
+    name       = "Services"
     identifier = "menu.services"
     url        = "/services/"
     weight     = 2

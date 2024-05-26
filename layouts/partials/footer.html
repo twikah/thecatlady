@@ -1,16 +1,15 @@
 <footer id="footer">
   <div class="container">
     {{ if isset .Site.Params "about_us" }}
-    <div class="col-md-4 col-sm-6">
-      <h4>{{ i18n "aboutUs" }}</h4>
+    <div class="col-md-4 col-sm-4">
+      <h4>{{ i18n "about" }}</h4>
 
       {{ .Site.Params.about_us | safeHTML }}
 
-      <hr class="hidden-md hidden-lg hidden-sm">
     </div>
     <!-- /.col-md-4 -->
     {{ end }}
-    <div class="col-md-4 col-sm-6">
+    <div class="col-md-4 col-sm-4">
       <div class="social">
         {{ range .Site.Menus.social.ByWeight }}
         <a href="{{ .URL | safeURL }}" target="_blank" class="margin-left-10" style="opacity: 1;">{{ .Pre }}</a>
@@ -20,15 +19,13 @@
     <!-- /.col-md-4 -->
 
     {{ if isset .Site.Params "address" }}
-    <div class="col-md-4 col-sm-6">
+    <div class="col-md-4 col-sm-4">
 
       <h4>{{ i18n "contactTitle" }}</h4>
 
         {{ .Site.Params.address | safeHTML }}
 
       <!--<a href="{{ default "/contact" .Site.Params.contact_url }}" class="btn btn-small btn-template-main">{{ i18n "contactGoTo" }}</a>-->
-
-      <hr class="hidden-md hidden-lg hidden-sm">
 
     </div>
     <!-- /.col-md-4 -->

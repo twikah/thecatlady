@@ -5,6 +5,7 @@ description = "Know more about the cat lady!"
 layout = "about"
 +++
 
+\
 Hello, fellow cat lovers! I'm Vanessa, a cat sitter (and web developer) based in Pontinha.
 
 Ever since I can remember, my heart has been captivated by the grace and charm of our feline companions.

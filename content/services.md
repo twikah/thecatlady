@@ -38,4 +38,3 @@ My services are designed to provide care, love and attention to your pet when yo
 
 **Have Questions?** Check out the [FAQ]({{< ref "/FAQ" >}} "FAQ") page for more information. Or just reach out :)
 
-

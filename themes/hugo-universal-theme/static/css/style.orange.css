@@ -553,8 +553,8 @@ ul.list-style-none {
   border-radius: 0;
 }
 .btn-template-main {
-  color: var(--primary-accent);
-  background-color: #ffffff;
+  color: #fff;
+  background-color: #fff;
   border-color: var(--primary-accent);
 }
 .btn-template-main:hover,
@@ -562,7 +562,7 @@ ul.list-style-none {
 .btn-template-main:active,
 .btn-template-main.active,
 .open > .dropdown-toggle.btn-template-main {
-  color: var(--primary-accent);
+  color: #fff;
   background-color: #e6e6e6;
   border-color: var(--button-border);
 }
