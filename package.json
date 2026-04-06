@@ -10,9 +10,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "node": "^22.2.0"
+  "engines": {
+    "node": ">=22.2.0"
   },
+  "dependencies": {},
   "devDependencies": {
     "hugo-bin": "^0.123.1"
   },
