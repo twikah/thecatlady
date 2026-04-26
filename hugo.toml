@@ -41,11 +41,11 @@ pluralizelisttitles = false
     url        = "/faq/"
     weight     = 4
 
-##[[menu.main]]
-##    identifier = "contact"
-##    name       = "Contact"
-##    url        = "/contact/"
-##    weight     = 5
+[[menu.main]]
+    identifier = "menu.contact.cta"
+    name       = "Get in touch"
+    url        = "/contact/"
+    weight     = 5
 
 
 # Social links menu topbar
@@ -100,7 +100,7 @@ pluralizelisttitles = false
   # - you're done. Happy mailing!
   #
   # Enable the contact form by entering your Formspree.io endpoint url
-  formspree_action = "https://formspree.io/sample/of/endpoint"
+  # formspree_action = "" # Uncomment and set your Formspree endpoint to enable the contact form
   contact_form_ajax = false
 
   # Formspree form supports Google reCAPTCHA Key (type v2).
@@ -135,9 +135,9 @@ pluralizelisttitles = false
   logo_small = "img/the-cat-lady-logo-mini.png"
   contact_url = "/contact"
   address = """
-    <p class="text-uppercase">
-      <strong>Phone:</strong> +351 911183985
-      <br><strong>Email:</strong> vanessathecatlady@gmail.com
+    <p>
+      <strong>Phone:</strong> +351 911 183 985<br>
+      <strong>Email:</strong> vanessathecatlady@gmail.com
     </p>
   """
 [permalinks]

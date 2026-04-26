@@ -15,9 +15,11 @@ My services are designed to provide care, love and attention to your pet when yo
 
 **Location:** Serving the Lisbon and Odivelas areas
 
-**Cost:** €10 per visit
+**Cost:** €12.50 per visit (1–2 cats) · €15.50 per visit (3+ cats)
 
 **Duration:** Each visit lasts about 90 minutes
+
+**Free introductory visit:** Before we get started, I'll come by for a no-commitment visit so I can meet you and your cats, learn their routine, and make sure we're a good fit — completely free of charge.
 
 \
 **During my visit, I will:**
@@ -37,4 +39,21 @@ My services are designed to provide care, love and attention to your pet when yo
 **Additional Services:** Some unexpected needs, like purchasing medication, food, or a vet visit, will incur in extra fees. Visit the [FAQ]({{< ref "/FAQ" >}} "FAQ") page for more information.
 
 **Have Questions?** Check out the [FAQ]({{< ref "/FAQ" >}} "FAQ") page for more information. Or just reach out :)
+
+
+
+
+## Pricing
+
+| Service                                    |   Price |
+|---|---|
+| Introductory visit                         |   Free |
+| Home visit — 1–2 cats (90 min)             |   €12.50 |
+| Home visit — 3+ cats (90 min)              |   €15.50 |
+| Medication administration                  |   +€1 per visit |
+| Emergency supply run (food, litter)        |   Cost of items + €5 |
+
+
+
+
 

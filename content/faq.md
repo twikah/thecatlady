@@ -30,12 +30,12 @@ If your cat has unique needs or preferences, I’m happy to customize my service
 
 ## How much do you charge for your services and how do I pay?
 
-The standard service has a cost of €10 per visit. Payments should be made at the end of the visits and can be made by bank transfer, via Mbway, or in cash.
+The standard service costs €12.50 per visit for 1–2 cats, and €15.50 for households with 3 or more cats. Payments should be made at the end of the visits and can be made by bank transfer, via Mbway, or in cash.
 
 
 ## Do you offer any discounts?
 
-Discounts may be offered depending on the number of visits scheduled.
+I don't have a fixed discount structure, but if you need a high number of visits over an extended period, feel free to reach out and we can discuss what works for both of us.
 
 
 ## Are you able to take care of cats that need to take medication?
@@ -45,7 +45,7 @@ I'm comfortable with administering medication to cats. However, this also depend
 
 ## What if there's a medical emergency?
 
-In the event of a medical emergency, I will attempt to contact the tutor to obtain approval for the necessary intervention. If I am unable to reach the tutor, I will take the best possible actions to ensure the cat's safety and well-being.
+In the event of a medical emergency, I will attempt to contact the owner to obtain approval for the necessary intervention. If I am unable to reach the owner, I will take the best possible actions to ensure the cat's safety and well-being.
 
 The client is responsible for all resulting expenses, including transportation to the veterinary clinic or hospital.
 
@@ -62,7 +62,7 @@ Tutors must provide all the necessary items for the well-being of the cats durin
 
 ## What if anything gets broken in the household?
 
-I do not take responsability for damages caused by the cat or for damages resulting from the use of poorly maintained resources.
+I do not take responsibility for damages caused by the cat or for damages resulting from the use of poorly maintained resources.
 
 
 ## Feedback
@@ -72,4 +72,4 @@ I am always striving to improve. Therefore, clients are encouraged to openly com
 
 ---
 
-> In case you haven't found the answer for your question please feel free to contact me via phone or email.
+Didn't find your answer? Feel free to [reach out](/contact) — I'm happy to help.

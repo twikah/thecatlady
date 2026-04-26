@@ -1,19 +1,15 @@
-/**** Overwrite fonts ****/
-body {
-  font-family: "Darker Grotesque", Helvetica, Arial, sans-serif;
-  font-size: 20px;
+/**** Lighter orange colour scheme ****/
+:root {
+  --primary-accent: #e8924e;
+  --button-border:  #c4712e;
 }
 
-.btn,
-.label,
-.pager,
-.pagination,
-#intro .item,
-.panel.sidebar-menu ul.nav.category-menu li a,
-.ribbon .theribbon,
-#blog-post .comment .reply,
-#productMain .sizes a,
-.breadcrumb,
+/**** Overwrite fonts ****/
+body {
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
 h1,
 h2,
 h3,
@@ -26,16 +22,29 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Darker Grotesque", Helvetica, Arial, sans-serif;
+  font-family: "Lora", Georgia, serif;
+}
+
+.btn,
+.label,
+.pager,
+.pagination,
+#intro .item,
+.panel.sidebar-menu ul.nav.category-menu li a,
+.ribbon .theribbon,
+#blog-post .comment .reply,
+#productMain .sizes a,
+.breadcrumb {
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
 }
 
 /**** Overwrite navbar and top ****/
 .navbar-default {
-  background-color: var(--primary-accent);
+  background-color: #edad6f;
 }
 
 .navbar ul.nav > li > a {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .navbar-default .navbar-nav > .active > a,
@@ -73,13 +82,52 @@ h6,
 
 /**** Breadcrumbs ****/
 #heading-breadcrumbs {
-  background: url('../img/pattern-breadcrumb2.png');
-  padding: 5px 0;
+  background: url('../img/pattern-breadcrumb2.png') #edad6f;
+  padding: 12px 0;
   margin-bottom: 10px;
 }
 #heading-breadcrumbs h1 {
   display: inline-block;
-  background-color: #fffdfc;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 4px 16px;
+  border-radius: 4px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 30px;
+  color: #3a2a1a;
+}
+
+/**** Services page ****/
+#content table td,
+#content table th {
+  padding: 8px 20px;
+}
+
+#content table td:first-child,
+#content table th:first-child {
+  padding-left: 0;
+}
+
+#content {
+  padding-bottom: 40px;
+}
+
+/**** Contact page ****/
+#contact {
+  padding-top: 20px;
+  padding-bottom: 0;
+  min-height: calc(100vh - 140px);
+}
+
+#contact .row {
+  margin-bottom: 0;
+}
+
+#contact section,
+#contact section > *:last-child,
+#contact p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /**** MISC ****/
@@ -127,7 +175,7 @@ section {
 
 /***** Hero *****/
 .home-hero {
-  background: var(--primary-accent);
+  background: #edad6f;
 }
 
 .home-hero h1,
@@ -140,26 +188,45 @@ section {
 
 .home-hero h1 {
   font-weight: 700;
-  font-size: 46px;
-  letter-spacing: 0.08em;
+  font-size: 38px;
 }
 
 .home-hero h2 {
   font-weight: 700;
-  font-size: 40px;
-  letter-spacing: 0.08em;
+  font-size: 32px;
 }
 
 .home-hero ul,
 .home-hero p {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 400;
   padding: 0;
-  letter-spacing: 0.08em;
 }
 
 .home-hero ul {
   padding-top: 20px;
+}
+
+.btn-hero-cta {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 10px 26px;
+  background: #fff;
+  color: var(--primary-accent);
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 100px;
+  border: 2px solid #fff;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-hero-cta:hover,
+.btn-hero-cta:focus {
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
 }
 
 @media (max-width: 767px) {
@@ -174,11 +241,11 @@ section {
 
 @media (max-width: 991px) {
   .home-hero h1 {
-    font-size: 36px;
+    font-size: 28px;
   }
   .home-hero ul,
   .home-hero p {
-    font-size: 18px;
+    font-size: 14px;
   }
   .home-hero ul {
     padding-top: unset;
@@ -194,9 +261,10 @@ section {
 
 @media (max-width: 1200px) {
   .home-hero h1 {
-    font-size: 32px;
+    font-size: 26px;
   }
 }
+
 @media (min-width: 1250px) {
   .home-hero .row {
     min-height: calc(100vh - 67px);
@@ -207,7 +275,7 @@ section {
     align-self: center;
   }
   .home-hero ul {
-    font-size: 22px;
+    font-size: 18px;
   }
   .home-hero .img-responsive {
     max-width: unset;
@@ -215,10 +283,21 @@ section {
   }
 }
 
+/***** Sticky footer — fill full viewport so body background never shows ****/
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+#all {
+  min-height: 100vh;
+}
+
 /***** Footer *****/
 #footer h4,
 #footer {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 @media (max-width: 767px) {
@@ -229,7 +308,7 @@ section {
 }
 
 #footer {
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 #footer .social {
@@ -256,5 +335,5 @@ section {
 }
 
 #copyright {
-  padding: 10px 0;
+  padding: 5px 0;
 }

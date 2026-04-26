@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colour Preview – The Cat Lady</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #ece9e4;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      text-align: center;
+      padding: 48px 24px 16px;
+    }
+    .page-header h1 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 8px;
+    }
+    .page-header p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 28px;
+    }
+
+    /* ── TABS ── */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 40px;
+      padding: 0 16px;
+    }
+    .tab-btn {
+      padding: 9px 20px;
+      border-radius: 100px;
+      border: 2px solid #ccc;
+      background: white;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      font-weight: 500;
+      color: #555;
+      transition: all 0.18s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      color: white;
+    }
+    .tab-btn[data-theme="all"]       { --c: #444; }
+    .tab-btn[data-theme="orange"]    { --c: #d97022; }
+    .tab-btn[data-theme="terracotta"]{ --c: #b85c3a; }
+    .tab-btn[data-theme="rose"]      { --c: #a05070; }
+    .tab-btn[data-theme="amber"]     { --c: #9a6820; }
+    .tab-btn.active, .tab-btn:hover { background: var(--c); border-color: var(--c); }
+
+    /* ── GRID ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      padding: 0 24px 64px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* ── CARD ── */
+    .card {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.10);
+      background: white;
+    }
+    .card-label {
+      padding: 10px 18px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: white;
+    }
+
+    /* ── MOCK SITE ── */
+
+    /* Nav */
+    .mock-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      height: 52px;
+    }
+    .mock-nav .logo {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: white;
+    }
+    .mock-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 16px;
+    }
+    .mock-nav ul li a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+    }
+    .mock-nav ul li a.active-link {
+      color: white;
+      font-weight: 600;
+      border-bottom: 1.5px solid rgba(255,255,255,0.7);
+      padding-bottom: 2px;
+    }
+
+    /* Hero */
+    .mock-hero {
+      padding: 32px 20px 36px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .mock-hero-text { flex: 1; }
+    .mock-hero-text h1 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+    .mock-hero-text ul {
+      list-style: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.9;
+    }
+    .mock-hero-img {
+      width: 90px;
+      height: 90px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 44px;
+      flex-shrink: 0;
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* CTA button */
+    .mock-cta {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      background: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    /* Content */
+    .mock-content {
+      padding: 22px 20px 18px;
+    }
+    .mock-content h2 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+    .mock-content p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+    .tag {
+      display: inline-block;
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      margin-right: 4px;
+      margin-bottom: 4px;
+    }
+
+    /* Service cards */
+    .mock-services {
+      padding: 0 20px 20px;
+      display: flex;
+      gap: 10px;
+    }
+    .service-card {
+      flex: 1;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .service-card h3 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #1a1a1a;
+    }
+    .service-card p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+    }
+    .service-card .price {
+      margin-top: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* Footer */
+    .mock-footer {
+      padding: 16px 20px;
+      background: #2a2a2a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .mock-footer .footer-logo {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+    }
+    .mock-footer .footer-copy {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      color: #999;
+    }
+
+    /* ══════════════════════════════════
+       THEME COLOURS
+    ══════════════════════════════════ */
+
+    /* 1. Current Orange */
+    .theme-orange .card-label,
+    .theme-orange .mock-nav,
+    .theme-orange .mock-hero { background: #d97022; }
+    .theme-orange .mock-cta  { color: #d97022; }
+    .theme-orange .tag       { background: #fff3e8; color: #b85a10; border: 1px solid #ffd5aa; }
+    .theme-orange .service-card .price { color: #d97022; }
+
+    /* 2. Terracotta + Cream */
+    .theme-terracotta .card-label,
+    .theme-terracotta .mock-nav,
+    .theme-terracotta .mock-hero { background: #b85c3a; }
+    .theme-terracotta .mock-content { background: #fffaf7; }
+    .theme-terracotta .mock-cta    { color: #b85c3a; }
+    .theme-terracotta .tag         { background: #fdf0eb; color: #8c3e22; border: 1px solid #f5c4ad; }
+    .theme-terracotta .service-card .price { color: #b85c3a; }
+
+    /* 3. Dusty Rose + Warm Slate */
+    .theme-rose .card-label,
+    .theme-rose .mock-nav,
+    .theme-rose .mock-hero { background: #9b4f6e; }
+    .theme-rose .mock-content  { background: #fdf8fb; }
+    .theme-rose .mock-cta      { color: #9b4f6e; }
+    .theme-rose .tag           { background: #fceef5; color: #7a3457; border: 1px solid #f0c2d8; }
+    .theme-rose .service-card .price { color: #9b4f6e; }
+
+    /* 4. Amber + Deep Warm Brown */
+    .theme-amber .card-label,
+    .theme-amber .mock-nav,
+    .theme-amber .mock-hero { background: #9a6820; }
+    .theme-amber .mock-content  { background: #fffcf5; }
+    .theme-amber .mock-cta      { color: #9a6820; }
+    .theme-amber .tag           { background: #fdf5e4; color: #7a5010; border: 1px solid #e8d09a; }
+    .theme-amber .service-card .price { color: #9a6820; }
+
+    @media (max-width: 600px) {
+      .mock-services { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <h1>Colour Exploration — The Cat Lady</h1>
+    <p>Lora + DM Sans · four colour directions</p>
+    <div class="tabs">
+      <button class="tab-btn active" data-theme="all" onclick="show('all')">All four</button>
+      <button class="tab-btn" data-theme="orange" onclick="show('orange')">Current orange</button>
+      <button class="tab-btn" data-theme="terracotta" onclick="show('terracotta')">Terracotta</button>
+      <button class="tab-btn" data-theme="rose" onclick="show('rose')">Dusty rose</button>
+      <button class="tab-btn" data-theme="amber" onclick="show('amber')">Amber</button>
+    </div>
+  </div>
+
+  <div class="grid" id="grid">
+
+    <!-- CURRENT ORANGE -->
+    <div class="card theme-orange" id="card-orange">
+      <div class="card-label">Current — Orange #D97022</div>
+      <nav class="mock-nav">
+        <div class="logo">The Cat Lady</div>
+        <ul>
+          <li><a href="#" class="active-link">Cat sitting</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="mock-hero">
+        <div class="mock-hero-text">
+          <h1>Hello, I'm Vanessa and I'm a cat lover.</h1>
+          <ul>
+            <li>Travelling? Need someone for your cat?</li>
+            <li>Lisbon & Odivelas area.</li>
+          </ul>
+          <button class="mock-cta">Get in touch</button>
+        </div>
+        <div class="mock-hero-img">🐱</div>
+      </div>
+      <div class="mock-content">
+        <h2>I'm here to help</h2>
+        <p>Home visits designed to give your cat care, love and attention while you're away.</p>
+        <span class="tag">Home visits</span>
+        <span class="tag">€10/visit</span>
+        <span class="tag">90 min</span>
+      </div>
+      <div class="mock-services">
+        <div class="service-card">
+          <h3>Home Visit</h3>
+          <p>I drop by, give them love and make sure they're doing well.</p>
+          <div class="price">€10 per visit</div>
+        </div>
+        <div class="service-card">
+          <h3>Medication</h3>
+          <p>Comfortable administering meds to your cat.</p>
+          <div class="price">+€1 per service</div>
+        </div>
+      </div>
+      <div class="mock-footer">
+        <div class="footer-logo">The Cat Lady</div>
+        <div class="footer-copy">© 2026 · Lisbon & Odivelas</div>
+      </div>
+    </div>
+
+    <!-- TERRACOTTA -->
+    <div class="card theme-terracotta" id="card-terracotta">
+      <div class="card-label">Option A — Terracotta #B85C3A + Cream</div>
+      <nav class="mock-nav">
+        <div class="logo">The Cat Lady</div>
+        <ul>
+          <li><a href="#" class="active-link">Cat sitting</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="mock-hero">
+        <div class="mock-hero-text">
+          <h1>Hello, I'm Vanessa and I'm a cat lover.</h1>
+          <ul>
+            <li>Travelling? Need someone for your cat?</li>
+            <li>Lisbon & Odivelas area.</li>
+          </ul>
+          <button class="mock-cta">Get in touch</button>
+        </div>
+        <div class="mock-hero-img">🐱</div>
+      </div>
+      <div class="mock-content">
+        <h2>I'm here to help</h2>
+        <p>Home visits designed to give your cat care, love and attention while you're away.</p>
+        <span class="tag">Home visits</span>
+        <span class="tag">€10/visit</span>
+        <span class="tag">90 min</span>
+      </div>
+      <div class="mock-services">
+        <div class="service-card">
+          <h3>Home Visit</h3>
+          <p>I drop by, give them love and make sure they're doing well.</p>
+          <div class="price">€10 per visit</div>
+        </div>
+        <div class="service-card">
+          <h3>Medication</h3>
+          <p>Comfortable administering meds to your cat.</p>
+          <div class="price">+€1 per service</div>
+        </div>
+      </div>
+      <div class="mock-footer">
+        <div class="footer-logo">The Cat Lady</div>
+        <div class="footer-copy">© 2026 · Lisbon & Odivelas</div>
+      </div>
+    </div>
+
+    <!-- DUSTY ROSE -->
+    <div class="card theme-rose" id="card-rose">
+      <div class="card-label">Option B — Dusty Rose #9B4F6E + Warm Slate</div>
+      <nav class="mock-nav">
+        <div class="logo">The Cat Lady</div>
+        <ul>
+          <li><a href="#" class="active-link">Cat sitting</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="mock-hero">
+        <div class="mock-hero-text">
+          <h1>Hello, I'm Vanessa and I'm a cat lover.</h1>
+          <ul>
+            <li>Travelling? Need someone for your cat?</li>
+            <li>Lisbon & Odivelas area.</li>
+          </ul>
+          <button class="mock-cta">Get in touch</button>
+        </div>
+        <div class="mock-hero-img">🐱</div>
+      </div>
+      <div class="mock-content">
+        <h2>I'm here to help</h2>
+        <p>Home visits designed to give your cat care, love and attention while you're away.</p>
+        <span class="tag">Home visits</span>
+        <span class="tag">€10/visit</span>
+        <span class="tag">90 min</span>
+      </div>
+      <div class="mock-services">
+        <div class="service-card">
+          <h3>Home Visit</h3>
+          <p>I drop by, give them love and make sure they're doing well.</p>
+          <div class="price">€10 per visit</div>
+        </div>
+        <div class="service-card">
+          <h3>Medication</h3>
+          <p>Comfortable administering meds to your cat.</p>
+          <div class="price">+€1 per service</div>
+        </div>
+      </div>
+      <div class="mock-footer">
+        <div class="footer-logo">The Cat Lady</div>
+        <div class="footer-copy">© 2026 · Lisbon & Odivelas</div>
+      </div>
+    </div>
+
+    <!-- AMBER -->
+    <div class="card theme-amber" id="card-amber">
+      <div class="card-label">Option C — Amber #9A6820 + Deep Warm Brown</div>
+      <nav class="mock-nav">
+        <div class="logo">The Cat Lady</div>
+        <ul>
+          <li><a href="#" class="active-link">Cat sitting</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="mock-hero">
+        <div class="mock-hero-text">
+          <h1>Hello, I'm Vanessa and I'm a cat lover.</h1>
+          <ul>
+            <li>Travelling? Need someone for your cat?</li>
+            <li>Lisbon & Odivelas area.</li>
+          </ul>
+          <button class="mock-cta">Get in touch</button>
+        </div>
+        <div class="mock-hero-img">🐱</div>
+      </div>
+      <div class="mock-content">
+        <h2>I'm here to help</h2>
+        <p>Home visits designed to give your cat care, love and attention while you're away.</p>
+        <span class="tag">Home visits</span>
+        <span class="tag">€10/visit</span>
+        <span class="tag">90 min</span>
+      </div>
+      <div class="mock-services">
+        <div class="service-card">
+          <h3>Home Visit</h3>
+          <p>I drop by, give them love and make sure they're doing well.</p>
+          <div class="price">€10 per visit</div>
+        </div>
+        <div class="service-card">
+          <h3>Medication</h3>
+          <p>Comfortable administering meds to your cat.</p>
+          <div class="price">+€1 per service</div>
+        </div>
+      </div>
+      <div class="mock-footer">
+        <div class="footer-logo">The Cat Lady</div>
+        <div class="footer-copy">© 2026 · Lisbon & Odivelas</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function show(theme) {
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.theme === theme);
+      });
+      const all = ['orange','terracotta','rose','amber'];
+      all.forEach(t => {
+        document.getElementById('card-' + t).style.display =
+          (theme === 'all' || theme === t) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

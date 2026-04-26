@@ -24,4 +24,3 @@ Thank you for considering my services. I can't wait to meet you and your furry f
 
 Paws and whiskers,\
 Vanessa
-

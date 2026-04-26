@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Preview – The Cat Lady</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Darker+Grotesque:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #e07b39;
+      --orange-dark: #c4682a;
+      --cream: #fffdf9;
+      --text-dark: #1a1a1a;
+      --text-muted: #555;
+    }
+
+    body {
+      background: #f0ede8;
+      font-size: 16px;
+      color: var(--text-dark);
+    }
+
+    /* ── HEADER ── */
+    .page-header {
+      text-align: center;
+      padding: 48px 24px 32px;
+      font-family: system-ui, sans-serif;
+    }
+    .page-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    .page-header p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 24px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    .tab-btn {
+      padding: 10px 24px;
+      border-radius: 100px;
+      border: 2px solid #ccc;
+      background: white;
+      font-size: 14px;
+      font-family: system-ui, sans-serif;
+      cursor: pointer;
+      font-weight: 600;
+      color: #555;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: white;
+    }
+    .tab-btn:hover:not(.active) {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    /* ── PANELS ── */
+    .panels {
+      display: flex;
+      gap: 24px;
+      padding: 0 24px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .panel {
+      flex: 1;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    .panel-label {
+      padding: 12px 20px;
+      font-family: system-ui, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: white;
+      background: var(--orange);
+    }
+
+    /* current */
+    .panel-label.current { background: #888; }
+
+    /* ── SITE MOCKUP ── */
+    .site { display: none; }
+    .site.active { display: block; }
+
+    /* Nav */
+    .mock-nav {
+      background: var(--orange);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .mock-nav .logo {
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .mock-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .mock-nav ul li a {
+      color: rgba(255,255,255,0.88);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .mock-nav ul li a.active-link {
+      color: white;
+      font-weight: 700;
+      border-bottom: 2px solid white;
+      padding-bottom: 2px;
+    }
+
+    /* Hero */
+    .mock-hero {
+      background: var(--orange);
+      padding: 40px 24px 48px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .mock-hero-text { flex: 1; }
+    .mock-hero-text h1 {
+      color: white;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+    .mock-hero-text ul {
+      list-style: none;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.9;
+    }
+    .mock-hero-img {
+      width: 130px;
+      height: 130px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 56px;
+    }
+
+    /* Content section */
+    .mock-content {
+      padding: 32px 24px;
+      background: var(--cream);
+    }
+    .mock-content h2 {
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+    .mock-content p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .mock-content .tag {
+      display: inline-block;
+      background: #fff3ec;
+      color: var(--orange-dark);
+      border: 1px solid #ffd5bb;
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+
+    /* Services card row */
+    .mock-services {
+      padding: 24px;
+      background: white;
+      display: flex;
+      gap: 12px;
+    }
+    .service-card {
+      flex: 1;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .service-card h3 {
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+    .service-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .service-card .price {
+      margin-top: 10px;
+      font-weight: 700;
+      color: var(--orange);
+    }
+
+    /* Footer */
+    .mock-footer {
+      background: #2a2a2a;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .mock-footer .footer-logo {
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .mock-footer .footer-copy {
+      color: #999;
+      font-size: 12px;
+    }
+
+    /* ── FONT OPTION 1: Fraunces + Plus Jakarta Sans ── */
+    .font-fraunces .mock-nav .logo,
+    .font-fraunces .mock-hero-text h1,
+    .font-fraunces .mock-content h2,
+    .font-fraunces .service-card h3,
+    .font-fraunces .mock-footer .footer-logo {
+      font-family: 'Fraunces', Georgia, serif;
+    }
+    .font-fraunces .mock-nav ul li a,
+    .font-fraunces .mock-hero-text ul,
+    .font-fraunces .mock-content p,
+    .font-fraunces .mock-content .tag,
+    .font-fraunces .service-card p,
+    .font-fraunces .service-card .price,
+    .font-fraunces .mock-footer .footer-copy {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-fraunces .mock-hero-text h1 { font-size: 26px; font-weight: 700; }
+    .font-fraunces .mock-content h2 { font-size: 22px; font-weight: 600; font-style: italic; }
+    .font-fraunces .service-card h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; }
+
+    /* ── FONT OPTION 2: Lora + DM Sans ── */
+    .font-lora .mock-nav .logo,
+    .font-lora .mock-hero-text h1,
+    .font-lora .mock-content h2,
+    .font-lora .service-card h3,
+    .font-lora .mock-footer .footer-logo {
+      font-family: 'Lora', Georgia, serif;
+    }
+    .font-lora .mock-nav ul li a,
+    .font-lora .mock-hero-text ul,
+    .font-lora .mock-content p,
+    .font-lora .mock-content .tag,
+    .font-lora .service-card p,
+    .font-lora .service-card .price,
+    .font-lora .mock-footer .footer-copy {
+      font-family: 'DM Sans', sans-serif;
+    }
+    .font-lora .mock-hero-text h1 { font-size: 24px; font-weight: 700; }
+    .font-lora .mock-content h2 { font-size: 21px; font-weight: 600; }
+    .font-lora .service-card h3 { font-family: 'Lora', Georgia, serif; font-weight: 600; }
+
+    /* ── FONT CURRENT: Darker Grotesque ── */
+    .font-current .mock-nav .logo,
+    .font-current .mock-hero-text h1,
+    .font-current .mock-content h2,
+    .font-current .service-card h3,
+    .font-current .mock-footer .footer-logo,
+    .font-current .mock-nav ul li a,
+    .font-current .mock-hero-text ul,
+    .font-current .mock-content p,
+    .font-current .mock-content .tag,
+    .font-current .service-card p,
+    .font-current .service-card .price,
+    .font-current .mock-footer .footer-copy {
+      font-family: 'Darker Grotesque', sans-serif;
+    }
+    .font-current .mock-hero-text h1 { font-size: 26px; font-weight: 700; letter-spacing: 0.04em; }
+    .font-current .mock-content h2 { font-size: 22px; font-weight: 700; letter-spacing: 0.04em; }
+
+    @media (max-width: 700px) {
+      .panels { flex-direction: column; }
+      .mock-services { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <h1>Font Comparison — The Cat Lady</h1>
+    <p>Your actual site content, three font treatments side by side</p>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showAll()">All three</button>
+      <button class="tab-btn" onclick="showOne('fraunces')">Option 1 only</button>
+      <button class="tab-btn" onclick="showOne('lora')">Option 2 only</button>
+      <button class="tab-btn" onclick="showOne('current')">Current only</button>
+    </div>
+  </div>
+
+  <div class="panels" id="panels">
+
+    <!-- OPTION 1: Fraunces + Plus Jakarta Sans -->
+    <div class="panel" id="panel-fraunces">
+      <div class="panel-label">Option 1 — Fraunces + Plus Jakarta Sans</div>
+      <div class="site active font-fraunces">
+        <nav class="mock-nav">
+          <div class="logo">The Cat Lady</div>
+          <ul>
+            <li><a href="#" class="active-link">Cat sitting</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </nav>
+        <div class="mock-hero">
+          <div class="mock-hero-text">
+            <h1>Hello, my name is Vanessa and I'm a cat lover.</h1>
+            <ul>
+              <li>Are you travelling and need someone to look after your cat?</li>
+              <li>I provide cat sitting services in Lisbon and Odivelas.</li>
+            </ul>
+          </div>
+          <div class="mock-hero-img">🐱</div>
+        </div>
+        <div class="mock-content">
+          <h2>I'm here to help</h2>
+          <p>My services are designed to provide care, love and attention to your pet when you're away. Home visits in the Lisbon and Odivelas area.</p>
+          <span class="tag">Home visits</span>
+          <span class="tag">€10/visit</span>
+          <span class="tag">90 min</span>
+        </div>
+        <div class="mock-services">
+          <div class="service-card">
+            <h3>Home Visit</h3>
+            <p>I drop by to check on your cats, give them love, and make sure they're doing well.</p>
+            <div class="price">€10 per visit</div>
+          </div>
+          <div class="service-card">
+            <h3>Medication</h3>
+            <p>Comfortable administering medication, depending on your cat's cooperation.</p>
+            <div class="price">+€1 per service</div>
+          </div>
+        </div>
+        <div class="mock-footer">
+          <div class="footer-logo">The Cat Lady</div>
+          <div class="footer-copy">© 2026 The Cat Lady · Lisbon & Odivelas</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 2: Lora + DM Sans -->
+    <div class="panel" id="panel-lora">
+      <div class="panel-label">Option 2 — Lora + DM Sans</div>
+      <div class="site active font-lora">
+        <nav class="mock-nav">
+          <div class="logo">The Cat Lady</div>
+          <ul>
+            <li><a href="#" class="active-link">Cat sitting</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </nav>
+        <div class="mock-hero">
+          <div class="mock-hero-text">
+            <h1>Hello, my name is Vanessa and I'm a cat lover.</h1>
+            <ul>
+              <li>Are you travelling and need someone to look after your cat?</li>
+              <li>I provide cat sitting services in Lisbon and Odivelas.</li>
+            </ul>
+          </div>
+          <div class="mock-hero-img">🐱</div>
+        </div>
+        <div class="mock-content">
+          <h2>I'm here to help</h2>
+          <p>My services are designed to provide care, love and attention to your pet when you're away. Home visits in the Lisbon and Odivelas area.</p>
+          <span class="tag">Home visits</span>
+          <span class="tag">€10/visit</span>
+          <span class="tag">90 min</span>
+        </div>
+        <div class="mock-services">
+          <div class="service-card">
+            <h3>Home Visit</h3>
+            <p>I drop by to check on your cats, give them love, and make sure they're doing well.</p>
+            <div class="price">€10 per visit</div>
+          </div>
+          <div class="service-card">
+            <h3>Medication</h3>
+            <p>Comfortable administering medication, depending on your cat's cooperation.</p>
+            <div class="price">+€1 per service</div>
+          </div>
+        </div>
+        <div class="mock-footer">
+          <div class="footer-logo">The Cat Lady</div>
+          <div class="footer-copy">© 2026 The Cat Lady · Lisbon & Odivelas</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CURRENT: Darker Grotesque -->
+    <div class="panel" id="panel-current">
+      <div class="panel-label current">Current — Darker Grotesque</div>
+      <div class="site active font-current">
+        <nav class="mock-nav">
+          <div class="logo">The Cat Lady</div>
+          <ul>
+            <li><a href="#" class="active-link">Cat sitting</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </nav>
+        <div class="mock-hero">
+          <div class="mock-hero-text">
+            <h1>Hello, my name is Vanessa and I'm a cat lover.</h1>
+            <ul>
+              <li>Are you travelling and need someone to look after your cat?</li>
+              <li>I provide cat sitting services in Lisbon and Odivelas.</li>
+            </ul>
+          </div>
+          <div class="mock-hero-img">🐱</div>
+        </div>
+        <div class="mock-content">
+          <h2>I'm here to help</h2>
+          <p>My services are designed to provide care, love and attention to your pet when you're away. Home visits in the Lisbon and Odivelas area.</p>
+          <span class="tag">Home visits</span>
+          <span class="tag">€10/visit</span>
+          <span class="tag">90 min</span>
+        </div>
+        <div class="mock-services">
+          <div class="service-card">
+            <h3>Home Visit</h3>
+            <p>I drop by to check on your cats, give them love, and make sure they're doing well.</p>
+            <div class="price">€10 per visit</div>
+          </div>
+          <div class="service-card">
+            <h3>Medication</h3>
+            <p>Comfortable administering medication, depending on your cat's cooperation.</p>
+            <div class="price">+€1 per service</div>
+          </div>
+        </div>
+        <div class="mock-footer">
+          <div class="footer-logo">The Cat Lady</div>
+          <div class="footer-copy">© 2026 The Cat Lady · Lisbon & Odivelas</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function showAll() {
+      document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+      document.getElementById('panel-fraunces').style.display = '';
+      document.getElementById('panel-lora').style.display = '';
+      document.getElementById('panel-current').style.display = '';
+    }
+
+    function showOne(id) {
+      const tabs = document.querySelectorAll('.tab-btn');
+      const map = { fraunces: 1, lora: 2, current: 3 };
+      tabs.forEach((b, i) => b.classList.toggle('active', i === map[id]));
+      ['fraunces', 'lora', 'current'].forEach(p => {
+        document.getElementById('panel-' + p).style.display = p === id ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

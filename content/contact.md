@@ -1,10 +1,19 @@
 +++
 title = "Contact"
 id = "contact"
+description = "Get in touch with The Cat Lady for cat sitting services in Lisbon and Odivelas."
 +++
 
-# We are here to help you
+## Let's talk!
 
-Are you curious about something? Do you have some kind of problem with our products? As am hastily invited settled at limited civilly fortune me. Really spring in extent an by. Judge but built gay party world. Of so am he remember although required. Bachelor unpacked be advanced at. Confined in declared marianne is vicinity.
+I'd love to hear from you. Whether you have questions about my services, want to schedule a free introductory visit, or just want to say hi — feel free to reach out.
 
-Please feel free to contact us, our customer service center is working for you 24/7.
+The first step is always a free, no-commitment visit to your home so I can meet you and your cat and learn about their routine. You can book this by phone, WhatsApp, or email.
+
+**Phone / WhatsApp:** +351 911 183 985
+
+**Email:** vanessathecatlady@gmail.com
+
+**Instagram:** [@thecatlady.club](https://instagram.com/thecatlady.club)
+
+I'm available for visits between 8:00 AM and 10:00 PM, seven days a week. I'll get back to you as soon as I can!
